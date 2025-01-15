@@ -6,6 +6,8 @@ let currentTime = 0;
 let elaspseTime = 0;
 let isRunning = false;
 
+
+
 function start()
 {
     if (!isRunning)
@@ -35,11 +37,34 @@ function reset()
     isRunning = false;
 }
 
+function add()
+{
+    elaspseTime += 10000;
+    startTime = new Date() - elaspseTime;
+    update();
+}
+
+function sub()
+{
+    if(elaspseTime >= 10000)
+    {
+        elaspseTime -= 10000;
+    }
+    else{
+        elaspseTime = elaspseTime;
+    }
+    startTime = new Date() - elaspseTime;
+    update();
+    
+}
+
+
+
+
 function update()
 {
     currentTime = new Date();
     elaspseTime = currentTime - startTime;
-   
     let hours = Math.floor(elaspseTime / (1000 * 60 * 60)) % 60;
     let minutes = Math.floor(elaspseTime / (1000 * 60) % 60);
     let seconds = Math.floor(elaspseTime / 1000) % 60 ;
@@ -47,4 +72,7 @@ function update()
     let timeString = `${hours.toString().padStart(2, 0)}:${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}:${mS.toString().padStart(2, 0)}`;
     display.textContent = timeString;
 }
+
+
+   
 

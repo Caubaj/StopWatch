@@ -13,7 +13,7 @@
 
 
     <div id ="container">
-        <div id ="timer">00:00:00:00</div>
+        <div id ="timer" min="0">00:00:00:00</div>
 
         <div id="controls">
 
@@ -22,12 +22,12 @@
             <button id="resetBtn" onclick="reset()">Reset</button>
 
             <div class ="dropDown">
-                <button id ="addBtn">More Time</button>
+                <button id ="moreTime">More Time</button>
                 <div class="content">
-                    
+                    <button id ="add" onclick="add()">Add</button>
+                    <button id="sub" onclick="sub()">Sub</button>                    
                 </div>                
             </div>
-
         </div>
     </div>
 
